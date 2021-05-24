@@ -148,7 +148,7 @@ const Deposit = ({ vault, reset }) => {
       <ProxyAllowanceToggle token={symbol} trackBtnClick={trackBtnClick} />
       <Grid gridTemplateColumns="1fr 1fr" gridColumnGap="s">
         <Button
-          className="btn"
+          className="btn_next"
           disabled={!valid}
           onClick={() => {
             trackBtnClick('Confirm', {

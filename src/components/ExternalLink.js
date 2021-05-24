@@ -9,7 +9,7 @@ const ExternalLink = ({
   string,
   network,
   hideText,
-  fill = '#00DCDC',
+  fill = '#F0B90B',
   arrowInheritsColorOnHover = false
 }) => (
   <Link

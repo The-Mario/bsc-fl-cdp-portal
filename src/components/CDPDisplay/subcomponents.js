@@ -58,7 +58,7 @@ export const ActionContainerRow = ({ title, value, conversion, button }) => {
           css={`
             grid-column: 2;
             grid-row: ${conversion ? '1' : 'span 2'};
-            color: ${getColor('greyText')};
+            color: ${getColor('whiteText')};
           `}
           justifySelf="end"
         >
@@ -69,7 +69,7 @@ export const ActionContainerRow = ({ title, value, conversion, button }) => {
             css={`
               grid-row: 2;
               grid-column: 2;
-              color: ${getColor('subText')};
+              color: ${getColor('whiteText')};
               padding: 12px;
             `}
             justifySelf="end"
@@ -92,26 +92,12 @@ export const ActionContainerRow = ({ title, value, conversion, button }) => {
 };
 
 export const ActionButton = ({ children, ...props }) => (
-  <Button className="btn_hover"
-    width="100px"
+  <Button className="btn_dashboard"
     p="xs"
     variant="secondary"
-    style={{
-      backgroundColor: getColor('buttonBg'),
-      borderRadius: '30px',
-      borderColor: getColor('border'),
-      padding: '7px 10px',
-      
-    }}
     {...props}
   >
-    <Text
-      fontSize="s"
-      fontWeight="400"
-      style={{ color: getColor('buttonText') }}
-    >
-      {children}
-    </Text>
+    {children}
   </Button>
 );
 
@@ -158,7 +144,7 @@ export const AmountDisplay = ({ amount, denomination }) => {
 
 export const ExtraInfo = ({ children, ...props }) => {
   return (
-    <Text t="caption" lineHeight="none" color= "#4D566E" {...props}>
+    <Text t="caption" lineHeight="none" color="#4D566E" {...props}>
       {children}
     </Text>
   );

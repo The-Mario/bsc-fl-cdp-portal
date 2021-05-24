@@ -68,9 +68,9 @@ const Payback = ({ vault, reset }) => {
         vaultUnderDustLimit
           ? lang.cdp_create.dust_payback_below_limit
           : lang.formatString(
-              lang.cdp_create.dust_max_payback,
-              subtract(debtValue, debtFloor)
-            ),
+            lang.cdp_create.dust_max_payback,
+            subtract(debtValue, debtFloor)
+          ),
       allowanceInvalid: () =>
         lang.formatString(lang.action_sidebar.invalid_allowance, 'USDFL')
     }
@@ -106,8 +106,8 @@ const Payback = ({ vault, reset }) => {
   const collateralizationRatio = undercollateralized
     ? Infinity
     : vault.calculateCollateralizationRatio({
-        debtValue: USDFL(debtValue.minus(amountToPayback))
-      });
+      debtValue: USDFL(debtValue.minus(amountToPayback))
+    });
   return (
     <Grid gridRowGap="m">
       <Grid gridRowGap="s">
@@ -144,7 +144,7 @@ const Payback = ({ vault, reset }) => {
       <ProxyAllowanceToggle token="USDFL" trackBtnClick={trackBtnClick} />
       <Grid gridTemplateColumns="1fr 1fr" gridColumnGap="s">
         <Button
-          className="btn"
+          className="btn_next"
           disabled={!valid}
           onClick={() => {
             trackBtnClick('Confirm', {

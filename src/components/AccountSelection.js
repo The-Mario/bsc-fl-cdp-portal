@@ -78,7 +78,7 @@ const DropdownWrapper = styled(Box)`
       ? `
     ${FilledButton}, ${FilledButton}:hover {
        background-color: ${props.isOpen ? '#00C4C4' : '#222B3F'};
-       color:${props.isOpen ? '#fff' : '#00C4C4'};
+       color:${props.isOpen ? '#F3F3F5' : '#00C4C4'};
     }
   `
       : `
@@ -301,9 +301,8 @@ function AccountSelection({ buttonWidth = '240px', ...props }) {
         >
           <div>
             <DropdownItems
-              className={`${
-                mainWalletsCount >= otherWallets.length ? 'larger' : 'smaller'
-              } ${showMain ? 'show' : 'hide'}`}
+              className={`${mainWalletsCount >= otherWallets.length ? 'larger' : 'smaller'
+                } ${showMain ? 'show' : 'hide'}`}
             >
               <BrowserProviderItem
                 onClick={connectBrowserWallet}
@@ -323,9 +322,8 @@ function AccountSelection({ buttonWidth = '240px', ...props }) {
             </DropdownItems>
             <BrowserView style={{ position: 'static' }}>
               <DropdownItems
-                className={`${
-                  otherWallets.length > mainWalletsCount ? 'larger' : 'smaller'
-                } ${showMain ? 'hide' : 'show'}`}
+                className={`${otherWallets.length > mainWalletsCount ? 'larger' : 'smaller'
+                  } ${showMain ? 'hide' : 'show'}`}
               >
                 <NavItem
                   key="see-main-wallets-link"

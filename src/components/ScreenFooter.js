@@ -24,7 +24,7 @@ const ScreenFooter = ({
       >
         {secondaryButtonText ? secondaryButtonText : lang.actions.back}
       </Button>
-      <Button className="btn"
+      <Button className="btn_next"
         disabled={!canProgress}
         loading={loading}
         width="145px"

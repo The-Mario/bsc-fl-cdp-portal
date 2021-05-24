@@ -42,6 +42,7 @@ class StepperUI extends React.Component {
         {this.props.renderStepperHeader()}
 
         <Grid
+
           maxWidth="1600px"
           m="0 auto"
           alignItems="start"
@@ -50,28 +51,24 @@ class StepperUI extends React.Component {
         >
           <Flex justifyContent="center">
             <Stepper
-            className="stepper"
+              className="wrap_stepper"
               minWidth="200px"
               steps={this.props.steps}
               selected={this.props.step}
             />
           </Flex>
 
-          <div className="stepDiv"
-            style={{ width: '100%', maxWidth: '100vw', position: 'relative', color:'#00DCDC' }}
-          >
-            {React.Children.map(this.props.children, (child, index) => {
-              return (
-                <FadeIn className="stepDiv1"
-                  toLeft={index < this.props.step}
-                  toRight={index > this.props.step}
-                  active={index === this.props.step}
-                >
-                  {index === this.props.step && child}
-                </FadeIn>
-              );
-            })}
-          </div>
+          {React.Children.map(this.props.children, (child, index) => {
+            return (
+              <FadeIn
+                toLeft={index < this.props.step}
+                toRight={index > this.props.step}
+                active={index === this.props.step}
+              >
+                {index === this.props.step && child}
+              </FadeIn>
+            );
+          })}
         </Grid>
       </Grid>
     );
@@ -92,7 +89,7 @@ StepperUI.propTypes = {
 
 StepperUI.defaultProps = {
   show: false,
-  renderStepperHeader: () => {},
+  renderStepperHeader: () => { },
   steps: [],
   step: 0
 };

@@ -95,19 +95,19 @@ const Generate = ({ vault, reset }) => {
           {lang.action_sidebar.generate_description}
         </Text>
         <div className="input_border">
-        <Input
-          style={{ color: getColor('greyText'), border: "1px solid getColor('greyText')" }}
-          type="number"
-          value={amount}
-          min="0"
-          onChange={onAmountChange}
-          placeholder="0.00 USDFL"
-          failureMessage={failureMessage}
-        />
+          <Input
+            style={{ color: getColor('greyText'), border: "1px solid getColor('greyText')" }}
+            type="number"
+            value={amount}
+            min="0"
+            onChange={onAmountChange}
+            placeholder="0.00 USDFL"
+            failureMessage={failureMessage}
+          />
         </div>
       </Grid>
       <Grid gridTemplateColumns="1fr 1fr" gridColumnGap="s">
-        <Button className="btn"
+        <Button className="btn_next"
           disabled={!amount || failureMessage}
           onClick={() => {
             trackBtnClick('Confirm', {

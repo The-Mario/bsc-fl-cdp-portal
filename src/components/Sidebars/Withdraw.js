@@ -101,7 +101,7 @@ const Withdraw = ({ vault, reset }) => {
       : currency(0)
   });
 
-  
+
   return (
     <Grid gridRowGap="m">
       <Grid gridRowGap="s" className="input_des">
@@ -142,7 +142,7 @@ const Withdraw = ({ vault, reset }) => {
       </Grid>
       <Grid gridTemplateColumns="1fr 1fr" gridColumnGap="s">
         <Button
-          className="btn"
+          className="btn_next"
           disabled={!value || amountErrors}
           onClick={() => {
             trackBtnClick('Confirm', {

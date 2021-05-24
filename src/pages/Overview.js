@@ -25,9 +25,11 @@ import useEmergencyShutdown from 'hooks/useEmergencyShutdown';
 import { NotificationList, Routes, SAFETY_LEVELS } from 'utils/constants';
 import { FilledButton } from 'components/Marketing';
 import { formatter } from 'utils/ui';
+import bsc_token from 'images/icon-coin-bnb.svg';
+import { backgroundPosition } from 'styled-system';
 
 const InfoCard = ({ title, amount, denom }) => (
-  <Card py={{ s: 'm', xl: 'l' }} px="m" minWidth="22.4rem" style={{borderColor: getColor('border'), backgroundColor: getColor('cardBg')}}>
+  <Card py={{ s: 'm', xl: 'l' }} px="m" minWidth="25.4rem" style={{ borderColor: getColor('border'), backgroundColor: getColor('cardBg') }}>
     <Grid gridRowGap="s">
       <Text
         justifySelf={{ s: 'left', xl: 'center' }}
@@ -42,10 +44,10 @@ const InfoCard = ({ title, amount, denom }) => (
       <Box justifySelf={{ s: 'left', xl: 'center' }}>
         <Box display={{ s: 'none', xl: 'unset' }}>
           <Flex alignSelf="end" alignItems="flex-end">
-            <Text style={{fontSize:'20px', color: getColor('whiteText')}}>{amount}</Text>&nbsp;<Text style={{fontSize:'18px', color: getColor('whiteText')}}>{denom}</Text>
+            <Text style={{ fontSize: '20px', color: getColor('whiteText') }}>{amount}</Text>&nbsp;<Text style={{ fontSize: '18px', color: getColor('whiteText') }}>{denom}</Text>
           </Flex>
         </Box>
-        <Text style={{fontSize:'20px', color: getColor('whiteText')}} display={{ s: 'unset', xl: 'none' }}>
+        <Text style={{ fontSize: '20px', color: getColor('whiteText') }} display={{ s: 'unset', xl: 'none' }}>
           {amount} {denom}
         </Text>
       </Box>
@@ -87,6 +89,7 @@ function Overview({ viewedAddress }) {
   if (viewedAddressVaults && !viewedAddressVaults.length) {
     return (
       <PageContentLayout>
+
         <Flex
           height="70vh"
           justifyContent="center"
@@ -95,7 +98,7 @@ function Overview({ viewedAddress }) {
         >
           {account && account.address === viewedAddress ? (
             <>
-              <Text style={{fontSize:'20px', color: getColor('greyText')}} mb="26px">
+              <Text style={{ fontSize: '20px', color: getColor('greyText') }} mb="26px">
                 {lang.overview_page.get_started_title}
               </Text>
               <Link
@@ -114,7 +117,7 @@ function Overview({ viewedAddress }) {
               </Link>
             </>
           ) : (
-            <Text style={{fontSize:'20px', color: getColor('greyText')}}>
+            <Text style={{ fontSize: '20px', color: getColor('greyText') }}>
               {lang.formatString(
                 lang.overview_page.no_vaults,
                 <Address
@@ -131,7 +134,11 @@ function Overview({ viewedAddress }) {
   }
 
   return (
-    <PageContentLayout>
+    <PageContentLayout style={{
+      backgroundImage: `url(${bsc_token})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'right top',
+    }}>
       <Text.h2 pr="m" mb="m" color="white">
         {lang.overview_page.title}
       </Text.h2>
@@ -165,7 +172,7 @@ function Overview({ viewedAddress }) {
             />
           </Grid>
           <Box>
-            <Text style={{fontSize:'20px', color: getColor('greyText')}}>{lang.overview_page.your_cdps}</Text>
+            <Text style={{ fontSize: '20px', color: getColor('greyText') }}>{lang.overview_page.your_cdps}</Text>
             <Card
               px={{ s: 'm', xl: 'l' }}
               pt="m"
@@ -252,7 +259,8 @@ function Overview({ viewedAddress }) {
                         <Table.td>
                           {isFinite(collateralizationRatio.toNumber()) ? (
                             <RatioDisplay
-                              fontSize={{ s: '1.7rem', xl: '1.3rem' }}
+                              color={getColor('greyText')}
+                              fontSize={{ s: '1.4rem', xl: '1.4rem' }}
                               ratio={collateralizationRatio
                                 .toBigNumber()
                                 .dp(4)
@@ -269,17 +277,17 @@ function Overview({ viewedAddress }) {
                           )}
                         </Table.td>
                         <Table.td display={{ s: 'none', xl: 'table-cell' }}>
-                          <Text t="caption" >
-                          {`${formatter(collateralValue)} USD`}
+                          <Text t="caption" color={getColor('whiteText')}>
+                            {`${formatter(collateralValue)} USD`}
                           </Text>
                         </Table.td>
                         <Table.td display={{ s: 'none', xl: 'table-cell' }}>
-                          <Text t="caption" >
+                          <Text t="caption" color={getColor('greyText')}>
                             {`${formatter(collateralAvailableValue)} USD`}
                           </Text>
                         </Table.td>
                         <Table.td display={{ s: 'none', xl: 'table-cell' }}>
-                          <Text t="caption" >
+                          <Text t="caption" color={getColor('greyText')}>
                             {debtValue.toBigNumber().toFixed(2)} USDFL
                           </Text>
                         </Table.td>
@@ -287,34 +295,19 @@ function Overview({ viewedAddress }) {
                           <Flex justifyContent="flex-end">
                             <Button
                               variant="secondary-outline"
-                              px="s"
-                              py="2xs"
-                              borderColor="steel"
-                              onClick={() => {
-                                trackBtnClick('Manage', {
-                                  collateral: collateralAmount.symbol,
-                                  vaultId: id
-                                });
-                              }}
+                              className="btn_dashboard"
                             >
                               <Link
                                 href={`/${Routes.BORROW}/${id}${url.search}`}
                                 prefetch={true}
                               >
-                                <Text
-                                  fontSize="1.3rem"
-                                  color="steel"
-                                  css={`
-                                    white-space: nowrap;
-                                  `}
-                                >
-                                  <Box display={{ s: 'none', xl: 'inline' }}>
-                                    {lang.overview_page.view_cdp}
-                                  </Box>
-                                  <Box display={{ s: 'inline', xl: 'none' }}>
-                                    {lang.overview_page.view_cdp_mobile}
-                                  </Box>
-                                </Text>
+
+                                <Box display={{ s: 'none', xl: 'inline' }}>
+                                  {lang.overview_page.view_cdp}
+                                </Box>
+                                <Box display={{ s: 'inline', xl: 'none' }}>
+                                  {lang.overview_page.view_cdp_mobile}
+                                </Box>
                               </Link>
                             </Button>
                           </Flex>

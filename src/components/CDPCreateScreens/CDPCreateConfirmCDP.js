@@ -124,31 +124,32 @@ const CDPCreateConfirmSummary = ({
           gridTemplateColumns="auto auto"
         >
           <label>
-          <Checkbox
-            checked={hasReadTOS}
-            onChange={() => {
-              trackBtnClick('Terms', { isFirstVault });
-              setHasReadTOS(state => !state);
-            }}
+            <Checkbox
+              checked={hasReadTOS}
+              onChange={() => {
+                trackBtnClick('Terms', { isFirstVault });
+                setHasReadTOS(state => !state);
+              }}
             />
-          <Text style={{ color: getColor('greyText') }} ml="s">
-            {lang.formatString(
-              lang.terms_of_service_text,
-              <Link href="/terms" target="_blank" color="#00DCDC">
-                {lang.terms_of_service}
-              </Link>
-            )}
-          </Text>
+            <Text style={{ color: getColor('greyText') }} ml="s">
+              {lang.formatString(
+                lang.terms_of_service_text,
+                <Link href="/terms" target="_blank" color="#F0B90B">
+                  {lang.terms_of_service}
+                </Link>
+              )}
+            </Text>
           </label>
           <br />
           <label>
-          <Checkbox
-            checked={hasUnderstoodSF}
-            onChange={() => setHasUnderstoodSF(state => !state)}
-          />
-          <Text style={{ color: getColor('greyText') }} ml="s">
-            {lang.cdp_create.has_understood_stability_fee}
-          </Text>
+            <Checkbox
+              className="chk_box"
+              checked={hasUnderstoodSF}
+              onChange={() => setHasUnderstoodSF(state => !state)}
+            />
+            <Text style={{ color: getColor('greyText') }} ml="s">
+              {lang.cdp_create.has_understood_stability_fee}
+            </Text>
           </label>
         </Grid>
       </Card>
@@ -198,11 +199,10 @@ const CDPCreateConfirmed = ({ hash, isFirstVault, onClose, txState }) => {
       const waitTimeText =
         waitTime < 1
           ? `${seconds} ${lang.cdp_create.seconds_wait_time}`
-          : `${minutes} ${
-              minutes === 1
-                ? lang.cdp_create.minutes_wait_time_singular
-                : lang.minutes_wait_time_plural
-            }`;
+          : `${minutes} ${minutes === 1
+            ? lang.cdp_create.minutes_wait_time_singular
+            : lang.minutes_wait_time_plural
+          }`;
 
       setWaitTime(waitTimeText);
     })();
@@ -253,14 +253,14 @@ const CDPCreateConfirmed = ({ hash, isFirstVault, onClose, txState }) => {
                   <Text style={{ color: getColor('whiteText') }} mr="xs">
                     {lang.cdp_create.view_tx_details}
                   </Text>
-                  <StyledExternalLink color="aqua" ml="4px" />
+                  <StyledExternalLink color="#F0B90B" ml="4px" />
                 </Button>
               </Link>
             )}
           </Box>
           <Flex textAlign="center" justifyContent="center">
             <Button
-              className="btn"
+              className="btn_next"
               onClick={() => {
                 trackBtnClick('Exit', { isFirstVault });
                 onClose();

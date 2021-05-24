@@ -110,12 +110,12 @@ function IlkTableRow({
         )}
       </td>
       <td>
-        <div style={{ color: '#00dcdc' }}>
+        <div style={{ color: '#F0B90B' }}>
           <a
             target="_blank"
             rel="noopener noreferrer"
             href={`${ilk.link}${ilk.token1}/${ilk.token2}`}>
-            {ilk.platform} <ExternalLinkIcon style={{ fill: '#00dcdc' }} />
+            {ilk.platform} <ExternalLinkIcon style={{ fill: '#F0B90B' }} />
           </a>
         </div>
       </td>

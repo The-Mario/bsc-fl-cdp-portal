@@ -5,7 +5,6 @@ import {
   Text,
   Card,
   CardBody,
-  Button,
   Flex
 } from '@makerdao/ui-components-core';
 import { getColor, getSpace } from 'styles/theme';
@@ -13,39 +12,12 @@ import ActiveAccount from 'components/ActiveAccount';
 import StripedRows from 'components/StripedRows';
 import WalletConnectDropdown from 'components/WalletConnectDropdown';
 import useWalletBalances from 'hooks/useWalletBalances';
-import useSidebar from 'hooks/useSidebar';
 import useLanguage from 'hooks/useLanguage';
 import { showWalletTokens } from 'references/config';
 import { prettifyNumber } from 'utils/ui';
-import { Toggles } from 'utils/constants';
-import useToggle from 'hooks/useToggle';
-import useAnalytics from 'hooks/useAnalytics';
-import styled from 'styled-components';
-import Carat from './Carat';
-import { Link, useCurrentRoute } from 'react-navi';
-import { Routes } from 'utils/constants';
-import theme from '../styles/theme';
-import FullScreenAction from './CDPDisplay/FullScreenAction';
 import useCdpTypes from '../hooks/useCdpTypes';
 import { watch } from 'hooks/useObservable';
 
-
-const StyledCardBody = styled(CardBody)`
-  cursor: pointer;
-  border-top: 1px solid ${getColor('border')} !important;
-`;
-
-const ActionButton = ({ children, ...rest }) => (
-  <Button
-    variant="secondary-outline"
-    px="4px"
-    py="1px"
-    minWidth="4.5rem"
-    {...rest}
-  >
-    <Text t="smallCaps">{children}</Text>
-  </Button>
-);
 
 const TokenBalance = ({
   symbol,
@@ -77,13 +49,8 @@ const TokenBalance = ({
 
 const WalletBalances = ({ hasActiveAccount, closeSidebarDrawer }) => {
   const { lang } = useLanguage();
-  const { url } = useCurrentRoute();
-  const { trackBtnClick } = useAnalytics('WalletBalances');
-  const [actionShown, setActionShown] = useState(null);
 
   const balances = useWalletBalances();
-
-  const { show: showSidebar } = useSidebar();
 
   const { cdpTypesList } = useCdpTypes();
   const prices = watch.collateralTypesPrices(cdpTypesList);
@@ -91,25 +58,14 @@ const WalletBalances = ({ hasActiveAccount, closeSidebarDrawer }) => {
     () =>
       prices
         ? prices.reduce((acc, price) => {
-            const [, symbol] = price.symbol.split('/');
-            acc[symbol] = price;
-            return acc;
-          }, {})
+          const [, symbol] = price.symbol.split('/');
+          acc[symbol] = price;
+          return acc;
+        }, {})
         : {},
     [prices]
   );
 
-  const showAction = props => {
-    const emSize = parseInt(getComputedStyle(document.body).fontSize);
-    const pxBreakpoint = parseInt(theme.breakpoints.l) * emSize;
-    const isMobile = document.documentElement.clientWidth < pxBreakpoint;
-    if (isMobile) {
-      closeSidebarDrawer();
-      setActionShown(props);
-    } else {
-      showSidebar(props);
-    }
-  };
 
   const tokenBalances = useMemo(
     () =>
@@ -123,8 +79,8 @@ const WalletBalances = ({ hasActiveAccount, closeSidebarDrawer }) => {
         const usdRatio = tokenIsDaiOrDsr
           ? new BigNumber(1)
           : token === 'WETH'
-          ? uniqueFeeds['ETH']
-          : uniqueFeeds[token];
+            ? uniqueFeeds['ETH']
+            : uniqueFeeds[token];
         return [
           {
             token,
@@ -162,14 +118,14 @@ const WalletBalances = ({ hasActiveAccount, closeSidebarDrawer }) => {
         <StripedRows>
           {tokenBalances.map(
             ({ amount, symbol, usdRatio }, idx) =>
-                <TokenBalance
-                  key={`tokenbalance_${idx}`}
-                  symbol={symbol}
-                  amount={amount}
-                  usdRatio={usdRatio}
-                  hasActiveAccount={hasActiveAccount}
-                />
-              
+              <TokenBalance
+                key={`tokenbalance_${idx}`}
+                symbol={symbol}
+                amount={amount}
+                usdRatio={usdRatio}
+                hasActiveAccount={hasActiveAccount}
+              />
+
           )}
         </StripedRows>
       </CardBody>

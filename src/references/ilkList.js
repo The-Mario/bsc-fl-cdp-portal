@@ -12,9 +12,9 @@ export default [
     key: 'BUSDDAI-A', // the actual ilk name used in the vat
     gem: 'BUSDDAI',
     platform: 'Pancakeswap',
-    link: '#',
-    token1: '', //tonen contract
-    token2: '', //tonen contract
+    link: 'https://exchange.pancakeswap.finance/#/add/',
+    token1: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56', //tonen contract
+    token2: '0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3', //tonen contract
     currency: BUSDDAI, // the associated dai.js currency type
     networks: ['kovan', 'mainnet', 'testnet', 'rinkeby', 'ropsten', 'goerli']
   },
@@ -24,9 +24,9 @@ export default [
     key: 'BUSDUSDT-A', // the actual ilk name used in the vat
     gem: 'BUSDUSDT',
     platform: 'Pancakeswap',
-    link: '#',
-    token1: '', //tonen contract
-    token2: '', //tonen contract 
+    link: 'https://exchange.pancakeswap.finance/#/add/',
+    token1: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56', //tonen contract
+    token2: '0x55d398326f99059fF775485246999027B3197955', //tonen contract
     currency: BUSDUSDT, // the associated dai.js currency type
     networks: ['kovan', 'mainnet', 'testnet', 'rinkeby', 'ropsten', 'goerli']
   },
@@ -36,9 +36,9 @@ export default [
     key: 'BUSDUSDC-A', // the actual ilk name used in the vat
     gem: 'BUSDUSDC',
     platform: 'Pancakeswap',
-    link: '#',
-    token1: '', //tonen contract
-    token2: '', //tonen contract
+    link: 'https://exchange.pancakeswap.finance/#/add/',
+    token1: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56', //tonen contract
+    token2: '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d', //tonen contract
     currency: BUSDUSDC, // the associated dai.js currency type
     networks: ['kovan', 'mainnet', 'testnet', 'rinkeby', 'ropsten', 'goerli']
   }

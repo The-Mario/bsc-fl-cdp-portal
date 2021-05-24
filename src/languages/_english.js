@@ -172,14 +172,14 @@ export default {
     questions: {
       question1: 'What assets can I use as collateral?',
       answer1:
-        'Currently, Freeliquid Borrow supports following Uniswap pools: USDT/USDC, USDT/USDN, USDT/DAI, USDC/USDN, USDC/DAI, USDN/DAI. More types of collateral will be added in the future.',
+        'Currently, Freeliquid Borrow supports following Pancakeswap pools: BUSD/USDC, BUSD/USDN, BUSD/DAI. More types of collateral will be added in the future.',
       question2: 'How much does it cost?',
       answer2:
         'The cost of generating USDFL depends on the collateral and the risk profile. As usual, each user also has to pay the gas fees when interacting with Freeliquid.',
       question3:
         "How can I get USDFL if my collateral is not supported?",
       answer3:
-        "To generate USDFL by using Freeliquid Borrow, you must provide a collateral that is supported. However, you can always buy USDFL on decentralized exchanges (i.e., Uniswap), where liquidity for respective pairs will be provided.",
+        "To generate USDFL by using Freeliquid Borrow, you must provide a collateral that is supported. However, you can always buy USDFL on decentralized exchanges (i.e., Pancakeswap), where liquidity for respective pairs will be provided.",
       bottom_link1: 'Full list of Freeliquid Borrow FAQs →',
       bottom_link2: 'Glossary of terms'
     }
@@ -451,7 +451,7 @@ export default {
     tx_hash: 'Transaction hash',
     view_tx_details: 'View transaction details',
     select_title: 'Select the collateral type',
-    select_title2: '(Uniswap pools only)',
+    select_title2: '(Pancakeswap pools only)',
     select_text:
       'Each collateral type has its own risk parameters. You can lock up additional collateral types later.',
 
