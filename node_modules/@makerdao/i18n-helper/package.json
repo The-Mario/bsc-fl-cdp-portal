@@ -1,0 +1,14 @@
+{
+  "name": "@makerdao/i18n-helper",
+  "version": "0.1.8",
+  "description": "Translations for the header and footer component",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "scripts": {
+    "build": "yarn run build:es && yarn run build:cjs",
+    "build:es": "BABEL_ENV=es rollup -c",
+    "build:cjs": "BABEL_ENV=cjs rollup -c",
+    "watch": "rollup -w -c"
+  },
+  "gitHead": "89c239f85b11281369e334e99ae5873bd1e42574"
+}

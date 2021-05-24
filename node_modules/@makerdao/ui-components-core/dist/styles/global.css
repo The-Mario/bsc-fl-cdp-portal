@@ -1,0 +1,114 @@
+/*! minireset.css v0.0.3 | MIT License | github.com/jgthms/minireset.css */
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+ul {
+  list-style: none;
+}
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+img,
+embed,
+iframe,
+object,
+audio,
+video {
+  height: auto;
+  max-width: 100%;
+}
+iframe {
+  border: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+  text-align: left;
+}
+
+html {
+  font-size: 0.625rem;
+}
+
+body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'SF Pro Text',
+    'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+  letter-spacing: 0.02rem;
+  font-size: 1.6rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #291a41;
+}
+
+h1 {
+  font-size: 4.5rem;
+  line-height: 5.4rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 2.8rem;
+  line-height: 3.3rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 2.1rem;
+  line-height: 2.4rem;
+  font-weight: 600;
+}

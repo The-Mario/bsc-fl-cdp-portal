@@ -1,0 +1,15 @@
+{
+  "short_name": "Freeliquid",
+  "name": "Freeliquid",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "32x32 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#fff",
+  "background_color": "#191E2B"
+}
