@@ -148,10 +148,9 @@ function Borrow({ disableConnect = false }) {
             <MarketsTable
               cdpTypesList={cdpTypesList.filter(symbol =>
                 [
-                  'USDTUSDC',
-                  'USDTDAI',
-                  'USDCDAI',
-                  'USDTUSDN'
+                  'BUSDDAI',
+                  'BUSDUSDT',
+                  'BUSDUSDC'
                 ].includes(symbol.split('-')[0])
               )}
             />
@@ -176,21 +175,21 @@ function Borrow({ disableConnect = false }) {
               lang.borrow_landing.questions,
               lang
             )}
-            /* links={
-              <>
-                <Link
-                  style={{ color: '#00C4C4' }}
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {lang.borrow_landing.questions.bottom_link1}
-                </Link>
-                <Box display={{ s: 'none', m: 'inline-block' }}>
-                  <SeparatorDot mx="24px" />
-                </Box>
-              </>
-            } */
+          /* links={
+            <>
+              <Link
+                style={{ color: '#00C4C4' }}
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {lang.borrow_landing.questions.bottom_link1}
+              </Link>
+              <Box display={{ s: 'none', m: 'inline-block' }}>
+                <SeparatorDot mx="24px" />
+              </Box>
+            </>
+          } */
           />
         </QuestionsWrapper>
       </StyledPageContentLayout>

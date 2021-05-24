@@ -2,12 +2,9 @@
 import Maker from './libs/dai/src/index.js';
 import McdPlugin, {
   ETH,
-  USDTUSDC,
-  USDTDAI,
-  USDCDAI,
-  USDTUSDN,
-  USDNDAI,
-  USDCUSDN,
+  BUSDDAI,
+  BUSDUSDT,
+  BUSDUSDC,
   USD,
   USDFL,
   SAI,
@@ -89,8 +86,8 @@ export async function instantiateMaker({
         network === 'testnet'
           ? 'HTTP'
           : getQueryParamByName('ws') === '0'
-          ? 'HTTP'
-          : 'WEBSOCKET'
+            ? 'HTTP'
+            : 'WEBSOCKET'
     },
     web3: {
       pollingInterval: network === 'testnet' ? 100 : null
@@ -127,11 +124,8 @@ export {
   USD,
   USDFL,
   ETH,
-  USDTUSDC,
-  USDTDAI,
-  USDCDAI,
-  USDTUSDN,
-  USDNDAI,
-  USDCUSDN,
+  BUSDDAI,
+  BUSDUSDT,
+  BUSDUSDC,
   SAI
 };

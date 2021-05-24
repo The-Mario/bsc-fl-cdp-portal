@@ -8,8 +8,6 @@ import MarketingLayout from './layouts/MarketingLayout';
 import Landing from 'pages/Landing';
 import Overview from 'pages/Overview';
 import Borrow from 'pages/Borrow';
-import Save from 'pages/Save';
-import Reward from 'pages/Reward';
 import SaveOverview from 'pages/SaveOverview';
 import Privacy from 'pages/Privacy';
 import Terms from 'pages/Terms';
@@ -120,31 +118,11 @@ export default mount({
     withView(() => <SaveOverview />)
   ),
 
-  [`/${Routes.SAVE}/owner/:viewedAddress`]: withDashboardLayout(
-    route(request => {
-      const { viewedAddress } = request.params;
-      return {
-        title: 'Save',
-        view: <Save viewedAddress={viewedAddress} />
-      };
-    })
-  ),
-
-  [`/${Routes.REWARD}/owner/:viewedAddress`]: withDashboardLayout(
-    route(request => {
-      const { viewedAddress } = request.params;
-      return {
-        title: 'Reward',
-        view: <Reward viewedAddress={viewedAddress} />
-      };
-    })
-  ),
-
   [`/${Routes.TERMS}`]: route(() => ({
     title: 'Freeliquid - Terms',
     view: <Terms />
   })),
-  
+
   [`/${Routes.PRIVACY}`]: route(() => ({
     title: 'Freeliquid - Privacy Policy',
     view: <Privacy />

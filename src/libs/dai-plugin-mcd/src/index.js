@@ -69,12 +69,9 @@ export const DSR_USDFL = createCurrency('DSR-USDFL');
 
 export const USDT = createCurrency('USDT');
 
-export const USDTUSDC = createCurrency('USDTUSDC');
-export const USDTDAI = createCurrency('USDTDAI');
-export const USDCDAI = createCurrency('USDCDAI');
-export const USDTUSDN = createCurrency('USDTUSDN');
-export const USDNDAI = createCurrency('USDNDAI');
-export const USDCUSDN = createCurrency('USDCUSDN');
+export const BUSDDAI = createCurrency('BUSDDAI');
+export const BUSDUSDT = createCurrency('BUSDUSDT');
+export const BUSDUSDC = createCurrency('BUSDUSDC');
 
 export const REP = createCurrency('REP');
 export const ZRX = createCurrency('ZRX');
@@ -87,16 +84,13 @@ export const USDC = createCurrency('USDC');
 export const WBTC = createCurrency('WBTC');
 export const TUSD = createCurrency('TUSD');
 export const MANA = createCurrency('MANA');
-export const FL = createCurrency('FL');
+//export const FL = createCurrency('FL');
 export const USDFL = createCurrency('USDFL');
 
 export const defaultCdpTypes = [
-  { currency: USDTUSDC, ilk: 'USDTUSDC-A' },
-  { currency: USDTDAI, ilk: 'USDTDAI-A' },
-  { currency: USDCDAI, ilk: 'USDCDAI-A' },
-  { currency: USDNDAI, ilk: 'USDNDAI-A' },
-  { currency: USDTUSDN, ilk: 'USDTUSDN-A' },
-  { currency: USDCUSDN, ilk: 'USDCUSDN-A' }
+  { currency: BUSDDAI, ilk: 'BUSDDAI-A' },
+  { currency: BUSDUSDT, ilk: 'BUSDUSDT-A' },
+  { currency: BUSDUSDC, ilk: 'BUSDUSDC-A' }
 ];
 
 export const SAI = createCurrency('SAI');
@@ -109,7 +103,6 @@ export const defaultTokens = [
   ...new Set([
     ...defaultCdpTypes.map(type => type.currency),
     USDFL,
-    FL,
     WETH,
     SAI,
     DSR_USDFL

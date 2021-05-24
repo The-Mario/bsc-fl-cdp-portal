@@ -9,8 +9,6 @@ import {
 import SidebarGlobal from './Sidebars/Global';
 import AccountBox from './AccountBox';
 import BorrowNav from 'components/BorrowNav';
-import SaveNav from 'components/SaveNav';
-import RewardNav from 'components/RewardNav';
 
 import { Flex, Box } from '@makerdao/ui-components-core';
 import useMaker from 'hooks/useMaker';
@@ -83,18 +81,6 @@ const MobileNav = ({ viewedAddress }) => {
       height={getMeasurement('mobileNavHeight')}
     >
       <Flex flex="1" alignItems="center" justifyContent="flex-start">
-        <RewardNav 
-        width={`${getMeasurement('mobileNavbarWidth')}px`}
-        account={account}
-        borderRadius="4px"
-        ml="xs"
-         />
-        <SaveNav
-          width={`${getMeasurement('mobileNavbarWidth')}px`}
-          account={account}
-          borderRadius="4px"
-          ml="xs"
-        />
         <BorrowNav
           width={`${getMeasurement('mobileNavbarWidth')}px`}
           viewedAddress={viewedAddress}

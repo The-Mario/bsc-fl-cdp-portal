@@ -301,17 +301,12 @@ const SmartStepSlider = ({
 };
 
 const cdpTypesMetaData = {
-  'USDTUSDC-A': {
-    text: 'USDT/USDC',
-    colRatio: 200,
-    amountRange: [1, 350],
-    amountStart: 25
-  }
+  
 };
 
 const BorrowCalculator = ({ prices, cdpTypesList, ...props }) => {
   const { lang } = useLanguage();
-  const [selectedSymbol, setSelectedSymbol] = useState('USDTUSDC-A');
+  const [selectedSymbol, setSelectedSymbol] = useState('BUSDDAI-A');
 
   const ilks = cdpTypesList
     .map((cdpTypeName, index) => ({

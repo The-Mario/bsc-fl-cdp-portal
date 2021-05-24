@@ -15,10 +15,7 @@ const Number = styled(Text)`
 `;
 
 const tokenNames = {
-  USDTUSDC: 'USDT/USDC',
-  USDTDAI: 'USDT/DAI',
-  USDCDAI: 'USDC/DAI',
-  USDTUSDN: 'USDT/USDN'
+
 };
 
 const MarketsTableStyle = styled(Table)`
@@ -135,7 +132,7 @@ const MarketsTable = ({ cdpTypesList, ...props }) => {
             <Table.tbody
               key={gem}
 
-              //onClick={() => toggleRow(rowIndex)}
+            //onClick={() => toggleRow(rowIndex)}
             >
               <Table.tr>
                 <td className="margin" />
@@ -165,16 +162,16 @@ const MarketsTable = ({ cdpTypesList, ...props }) => {
         })
       ) : (
         <Table.tbody>
-        <Table.tr>
-          <Table.td colSpan={8}>
-            <Loader
-              size="4rem"
-              color={getColor('spinner')}
-              bg="#131824"
-              m="40px auto"
-            />
-          </Table.td>
-        </Table.tr>
+          <Table.tr>
+            <Table.td colSpan={8}>
+              <Loader
+                size="4rem"
+                color={getColor('spinner')}
+                bg="#131824"
+                m="40px auto"
+              />
+            </Table.td>
+          </Table.tr>
         </Table.tbody>
       )}
     </MarketsTableStyle>

@@ -78,7 +78,7 @@ function IlkTableRow({
       }
     });
   }
-  const disabled = ilk.gem === 'TUSD';
+  const disabled = ilk.gem === '';
 
   return (
     <tr
@@ -111,10 +111,10 @@ function IlkTableRow({
       </td>
       <td>
         <div style={{ color: '#00dcdc' }}>
-          <a 
-          target="_blank"
-          rel="noopener noreferrer"
-          href={`${ilk.link}${ilk.token1}/${ilk.token2}`}>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href={`${ilk.link}${ilk.token1}/${ilk.token2}`}>
             {ilk.platform} <ExternalLinkIcon style={{ fill: '#00dcdc' }} />
           </a>
         </div>

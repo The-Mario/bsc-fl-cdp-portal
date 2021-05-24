@@ -15,12 +15,6 @@ import { ReactComponent as UsdcIcon } from 'images/tokens/usdc.svg';
 import { ReactComponent as WbtcIcon } from 'images/tokens/wbtc.svg';
 import { ReactComponent as ZrxIcon } from 'images/tokens/zrx.svg';
 import { ReactComponent as LpgIcon } from 'images/tokens/lpg.svg';
-import { ReactComponent as UsdtUsdc } from 'images/tokens/usdt_usdc.svg';
-import { ReactComponent as UsdtDai } from 'images/tokens/usdt_dai.svg';
-import { ReactComponent as UsdcDai } from 'images/tokens/usdc_dai.svg';
-import { ReactComponent as UsdcUsdn } from 'images/tokens/usdc_usdn.svg';
-import { ReactComponent as UsdnDai } from 'images/tokens/usdn_dai.svg';
-import { ReactComponent as UsdtUsdn } from 'images/tokens/usdt_usdn.svg';
 import { ReactComponent as DefaultIcon } from 'images/tokens/default.svg';
 
 const iconsByToken = {
@@ -39,12 +33,12 @@ const iconsByToken = {
   USDC: UsdcIcon,
   WBTC: WbtcIcon,
   ZRX: ZrxIcon,
-  USDTUSDC: UsdtUsdc,
-  USDTDAI: UsdtDai,
-  USDCDAI: UsdcDai,
-  USDTUSDN: UsdtUsdn,
-  USDNDAI: UsdnDai,
-  USDCUSDN: UsdcUsdn
+  BUSDDAI: DefaultIcon,
+  BUSDUSDT: DefaultIcon,
+  BUSDUSDC: DefaultIcon
+  //USDTUSDN: DefaultIcon,
+  //USDNDAI: DefaultIcon,
+  //USDCUSDN: DefaultIcon
 };
 
 const TokenIcon = ({ symbol, size = 70, ...props }) => {

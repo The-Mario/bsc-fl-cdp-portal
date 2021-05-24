@@ -16,13 +16,9 @@ const SidebarSystem = ({ system }) => {
     totalVaultsCreated
   } = system;
 
-  const flPrice = USDFL(watch.getFLPrice() || '0');
+  //const flPrice = USDFL(watch.getFLPrice() || '0');
 
   const systemParams = [
-    [
-      "FL price",
-      prettifyNumber(flPrice)
-    ],
     [
       lang.sidebar.system_collateralization,
       formatCollateralizationRatio(sc?.toNumber())
@@ -35,9 +31,9 @@ const SidebarSystem = ({ system }) => {
       lang.sidebar.active_cdps,
       totalVaultsCreated
         ? lang.formatString(
-            lang.sidebar.active_cdps_figure,
-            prettifyNumber(parseInt(totalVaultsCreated))
-          )
+          lang.sidebar.active_cdps_figure,
+          prettifyNumber(parseInt(totalVaultsCreated))
+        )
         : ''
     ]
   ];
@@ -76,7 +72,7 @@ const SidebarSystem = ({ system }) => {
               {param}
             </Text>
             <Box>
-              <Text fontSize="s" style={{color: getColor('greyText')}}>
+              <Text fontSize="s" style={{ color: getColor('greyText') }}>
                 {value}
               </Text>
             </Box>

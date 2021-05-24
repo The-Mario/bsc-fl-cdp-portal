@@ -1,7 +1,5 @@
 import React from 'react';
-import SaveNav from 'components/SaveNav';
 import BorrowNav from 'components/BorrowNav';
-import RewardNav from 'components/RewardNav';
 import NetworkNav from 'components/NetworkNav';
 import { Flex, Grid, Box } from '@makerdao/ui-components-core';
 import useMaker from 'hooks/useMaker';
@@ -22,8 +20,6 @@ const Navbar = ({ viewedAddress }) => {
           marginBottom: '50px'
         }} />
         <NetworkNav />
-        <RewardNav account={account} />
-        <SaveNav account={account} />
         <BorrowNav viewedAddress={viewedAddress} account={account} />
       </Grid>
     </Box>
