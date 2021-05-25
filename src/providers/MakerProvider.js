@@ -52,7 +52,7 @@ function MakerProvider({
   };
 
   const connectBrowserProvider = useCallback(async () => {
-    const networkId = maker.service('web3').networkId();
+    const networkId = maker.service('web3').network;
     const browserProvider = await checkEthereumProvider();
 
     function getMatchedAccount(address) {

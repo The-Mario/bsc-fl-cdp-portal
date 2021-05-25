@@ -45,10 +45,7 @@ const CDPCreateConfirmSummary = ({
   const [hasReadTOS, setHasReadTOS] = useState(false);
   const [hasUnderstoodSF, setHasUnderstoodSF] = useState(false);
 
-  const {
-    annualStabilityFee,
-    collateralValueForAmount
-  } = ilkData;
+  const { annualStabilityFee, collateralValueForAmount } = ilkData;
   const rows = [
     [
       lang.verbs.depositing,
@@ -187,7 +184,7 @@ const CDPCreateConfirmed = ({ hash, isFirstVault, onClose, txState }) => {
   const { maker } = useMaker();
   const [waitTime, setWaitTime] = useState('8 minutes');
 
-  const networkId = maker.service('web3').networkId();
+  const networkId = maker.service('web3').network;
   const isTestchain = ![1, 42].includes(networkId);
   useEffect(() => {
     (async () => {
