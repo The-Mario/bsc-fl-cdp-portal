@@ -32,7 +32,7 @@ import bsc_token from 'images/icon-coin-bnb.svg';
 const log = debug('maker:CDPDisplay/Presentation');
 const { FF_VAULT_HISTORY } = FeatureFlags;
 
-export default function ({
+export default function({
   vault,
   showSidebar,
   account,
@@ -318,10 +318,9 @@ export default function ({
       style={{
         backgroundImage: `url(${bsc_token})`,
         backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'right top',
+        backgroundPosition: 'right top'
       }}
     >
-
       <Box>
         <Text style={{ fontSize: '24px', color: getColor('whiteText') }}>
           {vaultType} {lang.cdp} #{vault.id}
@@ -341,13 +340,15 @@ export default function ({
           style={{
             color: getColor('whiteText'),
             backgroundColor: getColor('cardBg')
-
           }}
         >
-          <TextBlock fontSize="l" style={{
-            color: getColor('whiteText'),
-            padding: '14px 0px'
-          }}>
+          <TextBlock
+            fontSize="l"
+            style={{
+              color: getColor('whiteText'),
+              padding: '14px 0px'
+            }}
+          >
             {lang.cdp_page.liquidation_price_info}
           </TextBlock>
         </CdpViewCard>
@@ -381,7 +382,6 @@ export default function ({
             conversion={`${formatter(vault.collateralValue)} USD`}
             button={
               <ActionButton
-
                 disabled={disableDeposit}
                 onClick={() => {
                   trackBtnClick('Deposit');

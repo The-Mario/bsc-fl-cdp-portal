@@ -10,7 +10,8 @@ import CaratDownIcon from 'components/Carat';
 const ActiveAccount = ({
   address,
   type,
-  textColor = 'fff',
+  textColor = '#F0B90B',
+  walletColor = '#F3F3F5',
   t = 'body',
   addressTextStyle = 'body',
   readOnly,
@@ -21,12 +22,12 @@ const ActiveAccount = ({
     type === 'browser' ? getWebClientProviderName(type) : type;
   return (
     <Flex justifyContent="space-between" alignItems="center" {...rest}>
-      <Text fontSize="0.8rem" color={address ? '#F3F3F5' : '#A3B2CF'}>
+      <Text fontSize="1.8rem" color={address ? '#F0B90B' : '#A3B2CF'}>
         ●
       </Text>
 
       <Box ml="xs" mr="auto">
-        <Text t={t} color={textColor} fontSize="m">
+        <Text t={t} fontSize="m" color={walletColor}>
           {address ? lang.providers[providerType] : lang.sidebar.no_wallet}
         </Text>
       </Box>

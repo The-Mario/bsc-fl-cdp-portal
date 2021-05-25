@@ -92,11 +92,7 @@ export const ActionContainerRow = ({ title, value, conversion, button }) => {
 };
 
 export const ActionButton = ({ children, ...props }) => (
-  <Button className="btn_dashboard"
-    p="xs"
-    variant="secondary"
-    {...props}
-  >
+  <Button className="btn_dashboard" p="xs" variant="secondary" {...props}>
     {children}
   </Button>
 );

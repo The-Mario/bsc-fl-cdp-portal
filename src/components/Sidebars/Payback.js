@@ -68,9 +68,9 @@ const Payback = ({ vault, reset }) => {
         vaultUnderDustLimit
           ? lang.cdp_create.dust_payback_below_limit
           : lang.formatString(
-            lang.cdp_create.dust_max_payback,
-            subtract(debtValue, debtFloor)
-          ),
+              lang.cdp_create.dust_max_payback,
+              subtract(debtValue, debtFloor)
+            ),
       allowanceInvalid: () =>
         lang.formatString(lang.action_sidebar.invalid_allowance, 'USDFL')
     }
@@ -81,8 +81,7 @@ const Payback = ({ vault, reset }) => {
   // Don't enter more than the user's balance if there isn't enough to cover the debt.
   const maxPaybackAmount =
     debtValue && daiBalance && minimum(debtValue, daiBalance);
-  const setMax = () =>
-    setAmount(maxPaybackAmount.toString());
+  const setMax = () => setAmount(maxPaybackAmount.toString());
 
   const payback = async () => {
     const cdpManager = maker.service('mcd:cdpManager');
@@ -106,8 +105,8 @@ const Payback = ({ vault, reset }) => {
   const collateralizationRatio = undercollateralized
     ? Infinity
     : vault.calculateCollateralizationRatio({
-      debtValue: USDFL(debtValue.minus(amountToPayback))
-    });
+        debtValue: USDFL(debtValue.minus(amountToPayback))
+      });
   return (
     <Grid gridRowGap="m">
       <Grid gridRowGap="s">

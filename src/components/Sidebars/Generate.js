@@ -96,7 +96,10 @@ const Generate = ({ vault, reset }) => {
         </Text>
         <div className="input_border">
           <Input
-            style={{ color: getColor('greyText'), border: "1px solid getColor('greyText')" }}
+            style={{
+              color: getColor('greyText'),
+              border: "1px solid getColor('greyText')"
+            }}
             type="number"
             value={amount}
             min="0"
@@ -107,7 +110,8 @@ const Generate = ({ vault, reset }) => {
         </div>
       </Grid>
       <Grid gridTemplateColumns="1fr 1fr" gridColumnGap="s">
-        <Button className="btn_next"
+        <Button
+          className="btn_next"
           disabled={!amount || failureMessage}
           onClick={() => {
             trackBtnClick('Confirm', {
@@ -119,7 +123,8 @@ const Generate = ({ vault, reset }) => {
         >
           {lang.actions.generate}
         </Button>
-        <Button className="btn"
+        <Button
+          className="btn"
           variant="secondary-outline"
           onClick={() => {
             trackBtnClick('Cancel');

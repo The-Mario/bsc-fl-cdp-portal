@@ -29,14 +29,22 @@ import bsc_token from 'images/icon-coin-bnb.svg';
 import { backgroundPosition } from 'styled-system';
 
 const InfoCard = ({ title, amount, denom }) => (
-  <Card py={{ s: 'm', xl: 'l' }} px="m" minWidth="25.4rem" style={{ borderColor: getColor('border'), backgroundColor: getColor('cardBg') }}>
+  <Card
+    py={{ s: 'm', xl: 'l' }}
+    px="m"
+    minWidth="25.4rem"
+    style={{
+      borderColor: getColor('border'),
+      backgroundColor: getColor('cardBg')
+    }}
+  >
     <Grid gridRowGap="s">
       <Text
         justifySelf={{ s: 'left', xl: 'center' }}
         t="subheading"
         css={`
           white-space: nowrap;
-          color: ${getColor('greyText')}
+          color: ${getColor('greyText')};
         `}
       >
         {title.toUpperCase()}
@@ -44,10 +52,19 @@ const InfoCard = ({ title, amount, denom }) => (
       <Box justifySelf={{ s: 'left', xl: 'center' }}>
         <Box display={{ s: 'none', xl: 'unset' }}>
           <Flex alignSelf="end" alignItems="flex-end">
-            <Text style={{ fontSize: '20px', color: getColor('whiteText') }}>{amount}</Text>&nbsp;<Text style={{ fontSize: '18px', color: getColor('whiteText') }}>{denom}</Text>
+            <Text style={{ fontSize: '20px', color: getColor('whiteText') }}>
+              {amount}
+            </Text>
+            &nbsp;
+            <Text style={{ fontSize: '18px', color: getColor('whiteText') }}>
+              {denom}
+            </Text>
           </Flex>
         </Box>
-        <Text style={{ fontSize: '20px', color: getColor('whiteText') }} display={{ s: 'unset', xl: 'none' }}>
+        <Text
+          style={{ fontSize: '20px', color: getColor('whiteText') }}
+          display={{ s: 'unset', xl: 'none' }}
+        >
           {amount} {denom}
         </Text>
       </Box>
@@ -89,7 +106,6 @@ function Overview({ viewedAddress }) {
   if (viewedAddressVaults && !viewedAddressVaults.length) {
     return (
       <PageContentLayout>
-
         <Flex
           height="70vh"
           justifyContent="center"
@@ -98,7 +114,10 @@ function Overview({ viewedAddress }) {
         >
           {account && account.address === viewedAddress ? (
             <>
-              <Text style={{ fontSize: '20px', color: getColor('greyText') }} mb="26px">
+              <Text
+                style={{ fontSize: '20px', color: getColor('greyText') }}
+                mb="26px"
+              >
                 {lang.overview_page.get_started_title}
               </Text>
               <Link
@@ -113,7 +132,9 @@ function Overview({ viewedAddress }) {
                   });
                 }}
               >
-                <FilledButton className="button_p">{lang.actions.get_started}</FilledButton>
+                <FilledButton className="button_p">
+                  {lang.actions.get_started}
+                </FilledButton>
               </Link>
             </>
           ) : (
@@ -134,11 +155,13 @@ function Overview({ viewedAddress }) {
   }
 
   return (
-    <PageContentLayout style={{
-      backgroundImage: `url(${bsc_token})`,
-      backgroundRepeat: 'no-repeat',
-      backgroundPosition: 'right top',
-    }}>
+    <PageContentLayout
+      style={{
+        backgroundImage: `url(${bsc_token})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'right top'
+      }}
+    >
       <Text.h2 pr="m" mb="m" color="white">
         {lang.overview_page.title}
       </Text.h2>
@@ -148,7 +171,6 @@ function Overview({ viewedAddress }) {
             gridTemplateColumns={{ s: '1fr', xl: 'auto auto 1fr' }}
             gridColumnGap="m"
             gridRowGap="s"
-
           >
             <InfoCard
               title={lang.overview_page.total_collateral_locked}
@@ -160,7 +182,6 @@ function Overview({ viewedAddress }) {
                 .toBigNumber()
                 .toFixed(2)}`}
               denom={'USD'}
-
             />
             <InfoCard
               title={lang.overview_page.total_dai_debt}
@@ -172,7 +193,9 @@ function Overview({ viewedAddress }) {
             />
           </Grid>
           <Box>
-            <Text style={{ fontSize: '20px', color: getColor('greyText') }}>{lang.overview_page.your_cdps}</Text>
+            <Text style={{ fontSize: '20px', color: getColor('greyText') }}>
+              {lang.overview_page.your_cdps}
+            </Text>
             <Card
               px={{ s: 'm', xl: 'l' }}
               pt="m"
@@ -187,21 +210,23 @@ function Overview({ viewedAddress }) {
               <Table
                 width="100%"
                 variant="cozy"
-
                 css={`
                   td,
                   th {
                     white-space: nowrap;
                     color: ${getColor('whiteText')};
                   }
-                  tbody, tr {border-color: ${getColor('border')} !important} 
+                  tbody,
+                  tr {
+                    border-color: ${getColor('border')} !important;
+                  }
                   td:not(:last-child),
                   th:not(:last-child) {
                     padding-right: 10px;
                   }
                 `}
               >
-                <Table.thead >
+                <Table.thead>
                   <Table.tr>
                     <Table.th>{lang.overview_page.token}</Table.th>
                     <Table.th>{lang.overview_page.id}</Table.th>
@@ -234,7 +259,6 @@ function Overview({ viewedAddress }) {
                       debtValue,
                       collateralValue,
                       collateralAvailableValue
-
                     }) => (
                       <Table.tr key={id}>
                         <Table.td>
@@ -301,7 +325,6 @@ function Overview({ viewedAddress }) {
                                 href={`/${Routes.BORROW}/${id}${url.search}`}
                                 prefetch={true}
                               >
-
                                 <Box display={{ s: 'none', xl: 'inline' }}>
                                   {lang.overview_page.view_cdp}
                                 </Box>

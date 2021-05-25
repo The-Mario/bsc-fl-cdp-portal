@@ -42,7 +42,6 @@ class StepperUI extends React.Component {
         {this.props.renderStepperHeader()}
 
         <Grid
-
           maxWidth="1600px"
           m="0 auto"
           alignItems="start"
@@ -89,7 +88,7 @@ StepperUI.propTypes = {
 
 StepperUI.defaultProps = {
   show: false,
-  renderStepperHeader: () => { },
+  renderStepperHeader: () => {},
   steps: [],
   step: 0
 };

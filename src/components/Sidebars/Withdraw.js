@@ -101,7 +101,6 @@ const Withdraw = ({ vault, reset }) => {
       : currency(0)
   });
 
-
   return (
     <Grid gridRowGap="m">
       <Grid gridRowGap="s" className="input_des">

@@ -1,12 +1,6 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import BigNumber from 'bignumber.js';
-import {
-  Box,
-  Text,
-  Card,
-  CardBody,
-  Flex
-} from '@makerdao/ui-components-core';
+import { Box, Text, Card, CardBody, Flex } from '@makerdao/ui-components-core';
 import { getColor, getSpace } from 'styles/theme';
 import ActiveAccount from 'components/ActiveAccount';
 import StripedRows from 'components/StripedRows';
@@ -17,7 +11,6 @@ import { showWalletTokens } from 'references/config';
 import { prettifyNumber } from 'utils/ui';
 import useCdpTypes from '../hooks/useCdpTypes';
 import { watch } from 'hooks/useObservable';
-
 
 const TokenBalance = ({
   symbol,
@@ -40,8 +33,15 @@ const TokenBalance = ({
         {symbol}
       </Text>
       <Text fontWeight="semibold" t="p5" textAlign="left" width="30%">
-        {(hasActiveAccount && amount && usdRatio &&
-          `$ ${prettifyNumber(amount.times(usdRatio.toNumber()), { truncate: true }, 2)}`) || '--'}
+        {(hasActiveAccount &&
+          amount &&
+          usdRatio &&
+          `$ ${prettifyNumber(
+            amount.times(usdRatio.toNumber()),
+            { truncate: true },
+            2
+          )}`) ||
+          '--'}
       </Text>
     </Flex>
   );
@@ -58,14 +58,13 @@ const WalletBalances = ({ hasActiveAccount, closeSidebarDrawer }) => {
     () =>
       prices
         ? prices.reduce((acc, price) => {
-          const [, symbol] = price.symbol.split('/');
-          acc[symbol] = price;
-          return acc;
-        }, {})
+            const [, symbol] = price.symbol.split('/');
+            acc[symbol] = price;
+            return acc;
+          }, {})
         : {},
     [prices]
   );
-
 
   const tokenBalances = useMemo(
     () =>
@@ -79,8 +78,8 @@ const WalletBalances = ({ hasActiveAccount, closeSidebarDrawer }) => {
         const usdRatio = tokenIsDaiOrDsr
           ? new BigNumber(1)
           : token === 'WETH'
-            ? uniqueFeeds['ETH']
-            : uniqueFeeds[token];
+          ? uniqueFeeds['ETH']
+          : uniqueFeeds[token];
         return [
           {
             token,
@@ -116,17 +115,15 @@ const WalletBalances = ({ hasActiveAccount, closeSidebarDrawer }) => {
         </Flex>
 
         <StripedRows>
-          {tokenBalances.map(
-            ({ amount, symbol, usdRatio }, idx) =>
-              <TokenBalance
-                key={`tokenbalance_${idx}`}
-                symbol={symbol}
-                amount={amount}
-                usdRatio={usdRatio}
-                hasActiveAccount={hasActiveAccount}
-              />
-
-          )}
+          {tokenBalances.map(({ amount, symbol, usdRatio }, idx) => (
+            <TokenBalance
+              key={`tokenbalance_${idx}`}
+              symbol={symbol}
+              amount={amount}
+              usdRatio={usdRatio}
+              hasActiveAccount={hasActiveAccount}
+            />
+          ))}
         </StripedRows>
       </CardBody>
     </>

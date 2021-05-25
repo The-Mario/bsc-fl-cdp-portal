@@ -25,7 +25,7 @@ const RowFadeIn = styled.tr`
   ${generateDelays(20, 30)}
 `;
 
-export default function ({
+export default function({
   title,
   rows,
   network,
@@ -38,20 +38,18 @@ export default function ({
     () =>
       rows?.length > 0
         ? rows.map(([actionMsg, dateOfAction, txHash], i) => (
-          <RowFadeIn key={i}>
-            <td>
-              <Text t="caption">{actionMsg}</Text>
-            </td>
-            <td>
-              <Text t="caption">{dateOfAction}</Text>
-            </td>
-            <td>
-              <Text t="caption">
-                {txHash}
-              </Text>
-            </td>
-          </RowFadeIn>
-        ))
+            <RowFadeIn key={i}>
+              <td>
+                <Text t="caption">{actionMsg}</Text>
+              </td>
+              <td>
+                <Text t="caption">{dateOfAction}</Text>
+              </td>
+              <td>
+                <Text t="caption">{txHash}</Text>
+              </td>
+            </RowFadeIn>
+          ))
         : null,
     [rows]
   );

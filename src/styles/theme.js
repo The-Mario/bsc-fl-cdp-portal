@@ -138,7 +138,7 @@ export const marketingTheme = (() => {
         ...mHeading,
         color: '#A3B2CF',
         fontSize: '17px',
-        fontWeight: 'regular',
+        fontWeight: 'regular'
       },
       body: {
         fontFamily: mFont,

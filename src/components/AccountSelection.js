@@ -37,12 +37,14 @@ const ConnectDropdownStyle = styled.div`
     pointer-events: none;
     opacity: 0;
     z-index: 200;
+    background: #1c2230;
   }
 
   ${props => (props.openOnHover ? ':hover, :active' : '&.show')} {
     .dropdown-menu {
       opacity: 1;
       pointer-events: auto;
+      background-color: #1c2230;
     }
   }
 `;
@@ -161,7 +163,7 @@ const NavItem = styled(Item)`
   font-weight: bold;
   font-size: ${props => props.theme.fontSizes.s};
   letter-spacing: 0.5px;
-  color: #00C4C4;
+  color: #00c4c4;
   text-align: left;
   padding: 9px 26px;
 
@@ -188,6 +190,7 @@ function AccountSelection({ buttonWidth = '240px', ...props }) {
   });
 
   const providerName = getWebClientProviderName();
+  console.log('providerName', providerName);
   const {
     maker,
     authenticated: makerAuthenticated,

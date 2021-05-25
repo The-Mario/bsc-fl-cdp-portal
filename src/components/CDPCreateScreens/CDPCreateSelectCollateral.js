@@ -58,10 +58,7 @@ function IlkTableRow({
   ilkData
 }) {
   const { trackInputChange } = useAnalytics('SelectCollateral', 'VaultCreate');
-  const {
-    annualStabilityFee,
-    collateralValueForAmount
-  } = ilkData;
+  const { annualStabilityFee, collateralValueForAmount } = ilkData;
 
   async function selectIlk() {
     trackInputChange('CollateralType', {
@@ -114,7 +111,8 @@ function IlkTableRow({
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href={`${ilk.link}${ilk.token1}/${ilk.token2}`}>
+            href={`${ilk.link}${ilk.token1}/${ilk.token2}`}
+          >
             {ilk.platform} <ExternalLinkIcon style={{ fill: '#F0B90B' }} />
           </a>
         </div>

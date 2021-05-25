@@ -75,7 +75,8 @@ const Option = ({ icon, children, ...props }) => {
       css={`
         cursor: pointer;
         &:hover {
-          background-color: #191e2b;
+          background-color: #222B3F;
+          color: #fff;
         }
       `}
       {...props}
@@ -83,14 +84,14 @@ const Option = ({ icon, children, ...props }) => {
       <Flex alignItems="center">
         <IconBox>{icon}</IconBox>
         <span style={{ marginLeft: '14px' }}>
-          <Text p="body">{children}</Text>
+          <Text p="body" color="#A3B2CF">{children}</Text>
         </span>
       </Flex>
     </Box>
   );
 };
 
-const WalletConnectDropdown = ({ trigger, close = () => {}, ...props }) => {
+const WalletConnectDropdown = ({ trigger, close = () => { }, ...props }) => {
   const { lang } = useLanguage();
   const {
     maker,
@@ -153,6 +154,9 @@ const WalletConnectDropdown = ({ trigger, close = () => {}, ...props }) => {
         css={`
           border-top-right-radius: 0;
           border-top-left-radius: 0;
+          background-color: #131824;
+          border: 1px solid #323B4F;
+          
         `}
       >
         {otherAccounts.map(account => {
