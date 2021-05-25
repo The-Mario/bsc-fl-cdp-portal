@@ -11,7 +11,6 @@ import {
   USD,
   USDFL,
   DSR_USDFL,
-  FL,
   defaultCdpTypes,
   ALLOWANCE_AMOUNT
 } from '../';
@@ -811,8 +810,8 @@ export const getFLPrice = {
     computed: price =>
       inWei
         ? BigNumber(price)
-            .shiftedBy(18)
-            .toFixed()
+          .shiftedBy(18)
+          .toFixed()
         : price
   })
 };
@@ -893,14 +892,5 @@ export default {
   collateralTypesData,
   collateralDebtCeilings,
   collateralDebtAvailable,
-  walletRewardAmount,
-  walletRewardPairInfo,
-  walletRewardPairInfos,
-  rewardContract,
-  userVaultsLockedValue,
-  fairDistribAllowToLockValue,
-  getUniPrice,
-  getFLPrice,
-  getAPY,
-  getProfit
+  userVaultsLockedValue
 };

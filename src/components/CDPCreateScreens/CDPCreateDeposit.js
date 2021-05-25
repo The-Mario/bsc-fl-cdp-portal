@@ -20,7 +20,6 @@ function OpenCDPForm({
   handleInputChange,
   ilkData,
   dispatch,
-  fairDistribAllow,
   convertAmountToValue
 }) {
   const { lang } = useLanguage();
@@ -96,52 +95,46 @@ function OpenCDPForm({
       <Grid
         gridTemplateColumns={{ s: 'minmax(0, 1fr)', l: '1fr 1fr' }}
         gridGap="m"
-        style={{justifyItems: 'start', alignItems: 'start'}}
+        style={{ justifyItems: 'start', alignItems: 'start' }}
       >
-      <Input
-        style={{ fontSize: '14px', color: getColor('whiteText') }}
-        key="collinput"
-        name="valueToLock"
-        after={'USD'}
-        type="number"
-        value={
-          cdpParams.setMax
-            ? formatter(convertAmountToValue(cdpParams.gemsToLock))
-            : null
-        }
-        onChange={handleValueChange}
-        width={300}
-        borderColor="#323B4F"
-        failureMessage={
-          userHasSufficientGemBalance || !cdpParams.gemsToLock
-            ? hasSufficientAllowance(
+        <Input
+          style={{ fontSize: '14px', color: getColor('whiteText') }}
+          key="collinput"
+          name="valueToLock"
+          after={'USD'}
+          type="number"
+          value={
+            cdpParams.setMax
+              ? formatter(convertAmountToValue(cdpParams.gemsToLock))
+              : null
+          }
+          onChange={handleValueChange}
+          width={300}
+          borderColor="#323B4F"
+          failureMessage={
+            userHasSufficientGemBalance || !cdpParams.gemsToLock
+              ? hasSufficientAllowance(
                 cdpParams.gemsToLock === '' ? 0 : cdpParams.gemsToLock
               )
-              ? fairDistribAllow
-                ? null
-                : lang.cdp_create.fair_distrib_not_allow
+
               : lang.formatString(
-                  lang.action_sidebar.invalid_allowance,
-                  selectedIlk.gem
-                )
-            : lang.formatString(
                 lang.cdp_create.insufficient_ilk_balance,
                 selectedIlk.gem
               )
-        }
-      />
-      <Button
-      className="btn_setmax"
-      variant="secondary-outline"
-      onClick={() => {
-        setMax({
-          target: {
-            name: 'setMax',
-            value: userBalanceValue
           }
-        });
-      }}
-      >SET MAX</Button>
+        />
+        <Button
+          className="btn_setmax"
+          variant="secondary-outline"
+          onClick={() => {
+            setMax({
+              target: {
+                name: 'setMax',
+                value: userBalanceValue
+              }
+            });
+          }}
+        >SET MAX</Button>
       </Grid>,
       <Box key="ba">
         <Text style={{ fontSize: '14px', color: getColor('whiteText') }}>
@@ -162,44 +155,44 @@ function OpenCDPForm({
       <Grid
         gridTemplateColumns={{ s: 'minmax(0, 1fr)', l: '1fr 1fr' }}
         gridGap="m"
-        style={{justifyItems: 'start', alignItems: 'start'}}
+        style={{ justifyItems: 'start', alignItems: 'start' }}
       >
-      <Input
-        style={{ fontSize: '14px', color: getColor('whiteText') }}
-        key="daiToDraw"
-        name="daiToDraw"
-        after="USDFL"
-        width={300}
-        borderColor="#323B4F"
-        type="number"
-        failureMessage={
-          (belowDustLimit
-            ? lang.formatString(lang.cdp_create.below_dust_limit, debtFloor)
-            : null) ||
-          (userCanDrawDaiAmount ? null : lang.cdp_create.draw_too_much_dai) ||
-          (aboveDebtCeiling
-            ? lang.formatString(
+        <Input
+          style={{ fontSize: '14px', color: getColor('whiteText') }}
+          key="daiToDraw"
+          name="daiToDraw"
+          after="USDFL"
+          width={300}
+          borderColor="#323B4F"
+          type="number"
+          failureMessage={
+            (belowDustLimit
+              ? lang.formatString(lang.cdp_create.below_dust_limit, debtFloor)
+              : null) ||
+            (userCanDrawDaiAmount ? null : lang.cdp_create.draw_too_much_dai) ||
+            (aboveDebtCeiling
+              ? lang.formatString(
                 lang.action_sidebar.generate_threshold,
                 formatter(collateralDebtAvailable)
               )
-            : null) ||
-          (negDebtAvailable ? lang.action_sidebar.negative_debt_avail : null)
-        }
-        value={cdpParams.daiToDraw}
-        onChange={handleInputChange}
-      />
-      <Button
-      className="btn_setmax"
-      variant="secondary-outline"
-      onClick={() => {
-        handleInputChange({
-          target: {
-            name: 'daiToDraw',
-            value: formatter(daiAvailableToGenerate)
+              : null) ||
+            (negDebtAvailable ? lang.action_sidebar.negative_debt_avail : null)
           }
-        });
-      }}
-      >SET MAX</Button>
+          value={cdpParams.daiToDraw}
+          onChange={handleInputChange}
+        />
+        <Button
+          className="btn_setmax"
+          variant="secondary-outline"
+          onClick={() => {
+            handleInputChange({
+              target: {
+                name: 'daiToDraw',
+                value: formatter(daiAvailableToGenerate)
+              }
+            });
+          }}
+        >SET MAX</Button>
       </Grid>,
       <Grid gridRowGap="xs" key="keytodrawinfo">
         <Box key="ba">
@@ -334,8 +327,7 @@ const CDPCreateDeposit = ({
   hasSufficientAllowance,
   hasAllowance,
   collateralTypesData,
-  dispatch,
-  fairDistribAllowToLockValue
+  dispatch
 }) => {
   const { lang } = useLanguage();
   const { trackBtnClick } = useAnalytics('DepositGenerate', 'VaultCreate');
@@ -364,7 +356,6 @@ const CDPCreateDeposit = ({
 
   const valueToLock = convertAmountToValue(cdpParams.gemsToLock);
 
-  const fairDistribAllow = fairDistribAllowToLockValue(valueToLock);
 
   function handleInputChange({ target }) {
     if (parseFloat(target.value) < 0) return;
@@ -381,8 +372,7 @@ const CDPCreateDeposit = ({
       debtFloor,
       daiAvailable
     ) &&
-    hasSufficientAllowance(cdpParams.gemsToLock) &&
-    fairDistribAllow;
+    hasSufficientAllowance(cdpParams.gemsToLock)
 
   return (
     <Box
@@ -419,7 +409,6 @@ const CDPCreateDeposit = ({
             ilkData={ilkData}
             collateralizationRatio={collateralizationRatio}
             dispatch={dispatch}
-            fairDistribAllow={fairDistribAllow}
             convertAmountToValue={convertAmountToValue}
           />
         </Card>

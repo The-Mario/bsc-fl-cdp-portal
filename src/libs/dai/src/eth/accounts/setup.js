@@ -84,8 +84,8 @@ export async function getBrowserProvider() {
   if (window.ethereum) {
     await window.ethereum.enable();
     return wrap(window.ethereum);
-  } else if (window.web3) {
-    return wrap(window.web3.currentProvider);
+  } else if (window.ethereum) {
+    return wrap(window.ethereum.currentProvider);
   }
 }
 

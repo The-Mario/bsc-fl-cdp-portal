@@ -60,11 +60,11 @@ function reducer(state, action) {
         selectedIlk: {}
       };
     case 'form/set-gemsToLock':
-      return { ...state, gemsToLock: payload.value,  setMax: false };
+      return { ...state, gemsToLock: payload.value, setMax: false };
     case 'form/set-setMax':
       return { ...state, gemsToLock: payload.value, setMax: true };
     case 'form/set-daiToDraw':
-      return { ...state, daiToDraw: payload.value};
+      return { ...state, daiToDraw: payload.value };
     case 'transaction-confirmed':
       return { ...state, txState: TxLifecycle.CONFIRMED };
     case 'reset':
@@ -89,14 +89,6 @@ function CDPCreate({ onClose }) {
   const userVaultIds = userVaultsList
     ? userVaultsList.map(({ vaultId }) => vaultId)
     : [];
-
-  function fairDistribAllowToLockValue(addValue) {
-    const ids = userVaultIds;
-    const curTime = Math.round(new Date().getTime() / 1000);
-    const r = watch.fairDistribAllowToLockValue(ids, addValue, curTime);
-    if (r === undefined) return true;
-    return r;
-  }
 
   console.log(watch.collateralTypesData);
 
@@ -144,8 +136,7 @@ function CDPCreate({ onClose }) {
     proxyAddress,
     balances,
     collateralTypesData,
-    onClose,
-    fairDistribAllowToLockValue
+    onClose
   };
 
   return (

@@ -10,7 +10,6 @@ import end from './end';
 import osm from './osm';
 import getCdps from './getCdps';
 import computed from './computed';
-import reward from './reward';
 
 export * from './_constants';
 export default {
@@ -25,8 +24,7 @@ export default {
   ...token,
   ...getCdps,
   ...end,
-  ...osm,
-  ...reward
+  ...osm
 };
 
 /*

@@ -11,7 +11,7 @@ import CdpManager from './CdpManager';
 import SavingsService from './SavingsService';
 import CdpTypeService from './CdpTypeService';
 import AuctionService from './AuctionService';
-import RewardService from './RewardService';
+//import RewardService from './RewardService';
 import SystemDataService from './SystemDataService';
 import { ServiceRoles as ServiceRoles_ } from './constants';
 import BigNumber from 'bignumber.js';
@@ -158,7 +158,7 @@ export const McdPlugin = {
       [CDP_MANAGER]: CdpManager,
       [SAVINGS]: SavingsService,
       [AUCTION]: AuctionService,
-      [REWARDS]: RewardService,
+      //[REWARDS]: RewardService,
       [SYSTEM_DATA]: SystemDataService
     };
   }

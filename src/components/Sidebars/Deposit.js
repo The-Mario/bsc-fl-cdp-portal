@@ -9,10 +9,7 @@ import useWalletBalances from 'hooks/useWalletBalances';
 import useValidatedInput from 'hooks/useValidatedInput';
 import useLanguage from 'hooks/useLanguage';
 import useAnalytics from 'hooks/useAnalytics';
-import {
-  formatCollateralizationRatio,
-  formatter
-} from 'utils/ui';
+import { formatCollateralizationRatio, formatter } from 'utils/ui';
 import { multiply } from 'utils/bignumber';
 import { getCurrency } from 'utils/cdp';
 import ProxyAllowanceToggle from 'components/ProxyAllowanceToggle';
@@ -63,14 +60,6 @@ const Deposit = ({ vault, reset }) => {
     ? userVaultsList.map(({ vaultId }) => vaultId)
     : [];
 
-  function fairDistribAllowToLockValue(addValue) {
-    const ids = userVaultIds;
-    const curTime = Math.round(new Date().getTime() / 1000);
-    const r = watch.fairDistribAllowToLockValue(ids, addValue, curTime);
-    if (r == undefined) return true;
-    return r;
-  }
-
   const depositBalance = convertAmountToValue(gemBalance);
   console.log('deposit', depositBalance);
 
@@ -95,13 +84,8 @@ const Deposit = ({ vault, reset }) => {
   const valueToDeposit = value || BigNumber(0);
   const amountToDeposit = convertValueToAmount(valueToDeposit);
 
-  const fairDistribError = fairDistribAllowToLockValue(valueToDeposit)
-    ? null
-    : lang.cdp_create.fair_distrib_not_allow;
-
   const valid =
     value &&
-    fairDistribError == null &&
     !amountErrors &&
     hasAllowance &&
     hasProxy;
@@ -140,7 +124,7 @@ const Deposit = ({ vault, reset }) => {
             value={value}
             onChange={onAmountChange}
             placeholder={`0.00 USD`}
-            failureMessage={amountErrors || fairDistribError}
+            failureMessage={amountErrors}
             data-testid="deposit-input"
           />
         </div>
