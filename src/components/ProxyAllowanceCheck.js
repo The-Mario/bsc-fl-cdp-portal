@@ -37,7 +37,7 @@ const parseError = proxyErrors =>
 
 const SuccessButton = () => {
   return (
-    <Button variant="primary-outline" width="13.0rem" mt="xs" disabled>
+    <Button className="btn_next_d" variant="primary-outline" width="13.0rem" mt="xs" disabled>
       <Checkmark />
     </Button>
   );
@@ -84,6 +84,7 @@ const ProxyAllowanceCheck = ({
           <SuccessButton />
         ) : (
           <Button
+            className="btn_next"
             width="13.0rem"
             mt="xs"
             onClick={deployProxy}
@@ -149,6 +150,7 @@ const ProxyAllowanceCheck = ({
           <SuccessButton />
         ) : (
           <Button
+            className="btn_next"
             width="13.0rem"
             mt="xs"
             onClick={setAllowance}

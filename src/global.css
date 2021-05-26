@@ -87,6 +87,9 @@ h1, h2, h3, h4 {
   border-radius: 10px !important;
   color: #222b3f !important;
 }
+.btn_next_d{
+  border-color: #F0B90B !important;
+}
 .btn_next:hover{
 color: #fff !important;
 }
