@@ -6,6 +6,7 @@ import { createCurrency, createCurrencyRatio } from '@makerdao/currency';
 import testnetAddresses from '../contracts/addresses/testnet.json';
 import kovanAddresses from '../contracts/addresses/kovan.json';
 import mainnetAddresses from '../contracts/addresses/mainnet.json';
+import bscAddresses from '../contracts/addresses/bsc.json';
 import abiMap from '../contracts/abiMap';
 import CdpManager from './CdpManager';
 import SavingsService from './SavingsService';
@@ -49,6 +50,7 @@ let addContracts = reduce(
         address: {
           testnet: testnetAddress,
           kovan: kovanAddresses[name],
+          bsc: bscAddresses[name],
           mainnet: mainnetAddresses[name]
         }
       };

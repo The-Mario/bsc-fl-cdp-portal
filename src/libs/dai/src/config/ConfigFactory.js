@@ -3,6 +3,7 @@ import kovan from './presets/kovan.json';
 import http from './presets/http.json';
 import ws from './presets/ws.json';
 import mainnet from './presets/mainnet.json';
+import bsc from './presets/bsc.json';
 import browser from './presets/browser.json';
 import inject from './presets/inject.json';
 import intersection from 'lodash/intersection';
@@ -51,6 +52,9 @@ function loadPreset(name) {
       preset = kovan;
       break;
     case 'mainnet':
+      preset = bsc;
+      break;
+    case 'bsc':
       preset = mainnet;
       break;
     case 'browser':

@@ -4,10 +4,12 @@ import * as abis from './abis';
 import kovanAddresses from './addresses/kovan.json';
 import mainnetAddresses from './addresses/mainnet.json';
 import testnetAddresses from './addresses/testnet.json';
+import bscAddresses from './addresses/bsc.json';
 
 const addressMapping = {
   mainnet: mainnetAddresses,
   kovan: kovanAddresses,
+  bsc: bscAddresses,
   testnet: testnetAddresses
 };
 
@@ -136,6 +138,7 @@ export const TESTNET_ID = 99;
 
 export default [
   { name: 'mainnet', networkId: 1, contracts: contractInfo('mainnet') },
+  { name: 'bsc', networkId: 56, contracts: contractInfo('bsc') },
   { name: 'morden', networkId: 2 },
   { name: 'ropsten', networkId: 3 },
   {

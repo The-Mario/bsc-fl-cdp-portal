@@ -7,10 +7,12 @@
     "4",
     "3",
     "42",
-    "1"
+    "1",
+    "56"
   ],
   "rpcUrls": {
     "1": "https://mainnet.infura.io/v3/58073b4a32df4105906c702f167b91d2",
+    "56": "https://bsc-dataseed3.binance.org",
     "42": "https://kovan.infura.io/v3/58073b4a32df4105906c702f167b91d2",
     "4": "https://rinkeby.infura.io/v3/58073b4a32df4105906c702f167b91d2",
     "999": "http://localhost:2000",
@@ -18,6 +20,7 @@
     "1337": "http://localhost:2000"
   },
   "wsRpcUrls": {
+    "56": "wss://bsc-ws-node.nariox.org:443",
     "1": "wss://mainnet.infura.io/ws/v3/58073b4a32df4105906c702f167b91d2",
     "42": "wss://kovan.infura.io/ws/v3/58073b4a32df4105906c702f167b91d2",
     "4": "wss://rinkeby.infura.io/ws/v3/58073b4a32df4105906c702f167b91d2"
@@ -25,6 +28,7 @@
   "networkNames": {
     "1": "mainnet",
     "42": "kovan",
+    "56": "bsc",
     "3": "ropsten",
     "4": "rinkeby",
     "5": "goerli",
@@ -35,6 +39,7 @@
   "networkDisplayNames": {
     "1": "Mainnet",
     "42": "Kovan Testnet",
+    "56": "bsc",
     "3": "Ropsten Testnet",
     "4": "Rinkeby Testnet",
     "5": "Goerli Testnet",
@@ -42,7 +47,7 @@
     "99": "Testchain",
     "1337": "Ex_Testchain"
   },
-  "defaultNetwork": "1",
+  "defaultNetwork": "56",
   "exTestchainApiUrl": "http://localhost:4000/chain",
   "showWalletTokens": [
     "USDFL",
