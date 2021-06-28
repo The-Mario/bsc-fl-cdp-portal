@@ -1,10 +1,8 @@
 {
   "web3": {
     "provider": {
-      "type": "HTTP",
-      "url": "https://bsc.getblock.io/mainnet/?api_key=5218d45d-da20-459a-8f40-3e65c2540e8b"
+      "type": "INFURA",
+      "network": "bsc"
     }
-  },
-  "proxy": true,
-  "smartContract": true
+  }
 }
