@@ -12,7 +12,7 @@
   ],
   "rpcUrls": {
     "1": "https://mainnet.infura.io/v3/f741f6145a1a4920a8b1d3973f9d143b",
-    "56": "https://bsc.getblock.io/mainnet/?api_key=5218d45d-da20-459a-8f40-3e65c2540e8b",
+    "56": "https://bsc-dataseed3.binance.org/",
     "42": "https://kovan.infura.io/v3/f741f6145a1a4920a8b1d3973f9d143b",
     "4": "https://rinkeby.infura.io/v3/f741f6145a1a4920a8b1d3973f9d143b",
     "999": "http://localhost:2000",
@@ -20,7 +20,7 @@
     "1337": "http://localhost:2000"
   },
   "wsRpcUrls": {
-    "56": "wss://bsc-ws-node.nariox.org:443/",
+    "56": "wss://bsc-ws-node.nariox.org:443",
     "1": "wss://mainnet.infura.io/ws/v3/f741f6145a1a4920a8b1d3973f9d143b",
     "42": "wss://kovan.infura.io/ws/v3/f741f6145a1a4920a8b1d3973f9d143b",
     "4": "wss://rinkeby.infura.io/ws/v3/f741f6145a1a4920a8b1d3973f9d143b"
