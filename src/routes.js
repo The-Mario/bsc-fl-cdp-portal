@@ -131,7 +131,7 @@ export default mount({
 
 function RouteEffects({ network }) {
   useEffect(() => {
-    if (network !== 'mainnet' && window.location.hostname !== 'localhost');
+    if (network !== 'bsc' && window.location.hostname !== 'localhost');
   }, [network]);
   return null;
 }

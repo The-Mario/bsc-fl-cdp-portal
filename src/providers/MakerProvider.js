@@ -36,7 +36,7 @@ function MakerProvider({
   const [maker, setMaker] = useState(null);
   const [watcher, setWatcher] = useState(null);
 
-  const navNetwork = network === 'kovan-osm' ? 'kovan' : network;
+  const navNetwork = network === 'bsc-osm' ? 'bsc' : network;
   const navigation = useNavigation(navNetwork, mocks);
 
   const { trackBtnClick } = useAnalytics();

@@ -52,10 +52,10 @@ function loadPreset(name) {
       preset = kovan;
       break;
     case 'mainnet':
-      preset = bsc;
+      preset = mainnet;
       break;
     case 'bsc':
-      preset = mainnet;
+      preset = bsc;
       break;
     case 'browser':
       preset = browser;

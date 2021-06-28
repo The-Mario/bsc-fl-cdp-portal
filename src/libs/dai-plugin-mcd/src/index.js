@@ -50,8 +50,7 @@ let addContracts = reduce(
         address: {
           testnet: testnetAddress,
           kovan: kovanAddresses[name],
-          bsc: bscAddresses[name],
-          mainnet: mainnetAddresses[name]
+          bsc: bscAddresses[name]
         }
       };
     }
