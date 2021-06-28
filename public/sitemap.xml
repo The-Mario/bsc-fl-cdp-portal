@@ -4,7 +4,7 @@
 
     <url>
 
-        <loc>https://freeliquid.io</loc>
+        <loc>https://bsc.freeliquid.io</loc>
 
         <changefreq>monthly</changefreq>
 
@@ -14,7 +14,7 @@
 
     <url>
 
-        <loc>https://freeliquid.io/trade</loc>
+        <loc>https://bsc.freeliquid.io/trade</loc>
 
         <changefreq>monthly</changefreq>
 
@@ -24,7 +24,7 @@
 
     <url>
 
-        <loc>https://freeliquid.io/borrow</loc>
+        <loc>https://bsc.freeliquid.io/borrow</loc>
 
         <changefreq>monthly</changefreq>
 
@@ -34,7 +34,7 @@
 
     <url>
 
-        <loc>https://freeliquid.io/borrow/btc</loc>
+        <loc>https://bsc.freeliquid.io/borrow/btc</loc>
 
         <changefreq>monthly</changefreq>
 
@@ -44,7 +44,7 @@
 
     <url>
 
-        <loc>https://freeliquid.io/save</loc>
+        <loc>https://bsc.freeliquid.io/save</loc>
 
         <changefreq>monthly</changefreq>
 

@@ -83,7 +83,7 @@ const MainNav = ({ onLinkClicked, ...props }) => {
       <Link
         target="_blank"
         rel="noopener noreferrer"
-        href="https://vote.freeliquid.io"
+        href="https://bsc-vote.freeliquid.io"
         activeStyle={{ color: getColor('whiteText'), fontWeight: 'bold' }}
         onClick={() => onLinkClicked && onLinkClicked()}
       >

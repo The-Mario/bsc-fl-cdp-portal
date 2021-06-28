@@ -97,7 +97,7 @@ const Privacy = () => (
       <h3>Your inquiries</h3>
       <p>
         You may contact us by email to the following email address:{' '}
-        <a href="mailto:support@freeliquid.info">support@freeliquid.info</a>.
+        <a href="mailto:admin@freeliquid.io">support@freeliquid.info</a>.
         We use the data that you provide in an email to us, which you may give
         voluntarily, only in order to answer your contact question or to reply
         to your email in the best possible manner.
@@ -228,7 +228,7 @@ const Privacy = () => (
       <p>
         Please contact us with questions, comments, or concerns regarding our
         Privacy Policy as well as with any requests at{' '}
-        <a href="mailto:support@freeliquid.info">support@freeliquid.info</a>.
+        <a href="mailto:admin@freeliquid.io">support@freeliquid.info</a>.
       </p>
     </LegalTextLayout>
   </MarketingLayout>

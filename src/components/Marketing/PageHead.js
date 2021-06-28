@@ -9,7 +9,7 @@ const PageHead = ({ title, description, imgUrl }) => (
     <meta name="twitter:card" value="summary" />
     <meta property="og:title" content={title} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://freeliquid.io " />
+    <meta property="og:url" content="http://bsc.freeliquid.io " />
     <meta property="og:image" content={imgUrl} />
     <meta property="og:description" content={description} />
   </Helmet>

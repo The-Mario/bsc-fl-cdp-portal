@@ -25,7 +25,7 @@ export default {
     meta: {
       title: 'Freeliquid',
       description:
-        'Borrow and Save using USDFL. Place orders on the marketplace using Trade, generate USDFL, a stablecoin pegged to 1 USD, on Borrow and earn savings on your USDFL using Save. All on Freeliquid.io.'
+        'Borrow and Save using USDFL. Place orders on the marketplace using Trade, generate USDFL, a stablecoin pegged to 1 USD, on Borrow and earn savings on your USDFL using Save. All on BSC.Freeliquid.io.'
     },
     banner_fl: 'FL distribution is in progress. Click here to know about the rewards!',
     banner_binance: 'Freeliquid is expanding to Binance Smart Chain (BSC)! Read more in our proposal:',
@@ -50,7 +50,7 @@ export default {
     rd_title: 'Roadmap 2021',
     rd_q1: 'Q1',
     rd_q2: 'Q2',
-    rd_b1_1: 'Governance platform launch vote.freeliquid.io',
+    rd_b1_1: 'Governance platform launch bsc-vote.freeliquid.io',
     rd_b1_2: 'Waves Protocol integration',
     rd_b1_2_1: '- Mutual partnership',
     rd_b1_2_2: '- FL and USDFL on Waves.exchange',
@@ -206,7 +206,7 @@ export default {
     step5: 'Create a WBTC Vault to Generate USDFL',
     step5_details:
       'Navigate to {link} and open your vault with wBTC as collateral and generate your new USDFL',
-    step5_link_text: 'Freeliquid.io/borrow'
+    step5_link_text: 'BSC.Freeliquid.io/borrow'
   },
   borrow_markets: {
     meta: {

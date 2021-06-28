@@ -11,19 +11,19 @@
     "56"
   ],
   "rpcUrls": {
-    "1": "https://mainnet.infura.io/v3/58073b4a32df4105906c702f167b91d2",
+    "1": "https://mainnet.infura.io/v3/f741f6145a1a4920a8b1d3973f9d143b",
     "56": "https://bsc.getblock.io/mainnet/?api_key=5218d45d-da20-459a-8f40-3e65c2540e8b",
-    "42": "https://kovan.infura.io/v3/58073b4a32df4105906c702f167b91d2",
-    "4": "https://rinkeby.infura.io/v3/58073b4a32df4105906c702f167b91d2",
+    "42": "https://kovan.infura.io/v3/f741f6145a1a4920a8b1d3973f9d143b",
+    "4": "https://rinkeby.infura.io/v3/f741f6145a1a4920a8b1d3973f9d143b",
     "999": "http://localhost:2000",
     "99": "http://localhost:8545",
     "1337": "http://localhost:2000"
   },
   "wsRpcUrls": {
     "56": "wss://bsc.getblock.io/mainnet/?api_key=5218d45d-da20-459a-8f40-3e65c2540e8b",
-    "1": "wss://mainnet.infura.io/ws/v3/58073b4a32df4105906c702f167b91d2",
-    "42": "wss://kovan.infura.io/ws/v3/58073b4a32df4105906c702f167b91d2",
-    "4": "wss://rinkeby.infura.io/ws/v3/58073b4a32df4105906c702f167b91d2"
+    "1": "wss://mainnet.infura.io/ws/v3/f741f6145a1a4920a8b1d3973f9d143b",
+    "42": "wss://kovan.infura.io/ws/v3/f741f6145a1a4920a8b1d3973f9d143b",
+    "4": "wss://rinkeby.infura.io/ws/v3/f741f6145a1a4920a8b1d3973f9d143b"
   },
   "networkNames": {
     "1": "mainnet",
@@ -39,7 +39,7 @@
   "networkDisplayNames": {
     "1": "Mainnet",
     "42": "Kovan Testnet",
-    "56": "bsc",
+    "56": "Binance Smart Chain",
     "3": "Ropsten Testnet",
     "4": "Rinkeby Testnet",
     "5": "Goerli Testnet",
