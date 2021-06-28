@@ -1,7 +1,7 @@
 {
   "web3": {
     "provider": {
-      "type": "INFURA",
+      "type": "OTHER",
       "network": "bsc"
     }
   }

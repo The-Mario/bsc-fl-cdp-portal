@@ -20,7 +20,7 @@
     "1337": "http://localhost:2000"
   },
   "wsRpcUrls": {
-    "56": "wss://bsc-ws-node.nariox.org:443",
+    "56": "wss://bsc-ws-node.nariox.org:443/",
     "1": "wss://mainnet.infura.io/ws/v3/f741f6145a1a4920a8b1d3973f9d143b",
     "42": "wss://kovan.infura.io/ws/v3/f741f6145a1a4920a8b1d3973f9d143b",
     "4": "wss://rinkeby.infura.io/ws/v3/f741f6145a1a4920a8b1d3973f9d143b"
